@@ -5,14 +5,16 @@ Simples plugin para popular sua tabela com um objeto javascript ou uma array de 
 
 #Exemplo de utilização
 
-// Chame uma nova instancia de Table
+
+//Inicialização;
+
 var table = Table('Tabela_Id');
 
 ou
 
 var table = new Table('Tabela_Id');
 
-//Para adicionar um objeto 
+//Para adicionar um objeto
 
 table.addObject(seuObjeto);
 
