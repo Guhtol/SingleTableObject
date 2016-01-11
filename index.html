@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Exemplo</title>
+    <meta charset="utf-8" />
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Exemplo</h1>
+        <hr>
+        <div class="row">
+            <table class="table table-responsive table-striped table-hover" id='table'>
+                <thead>
+                    <tr>
+                        <td><strong>Nome</strong></td>
+                        <td><strong>Numero</strong></td>
+                        <td><strong>Email</strong></td>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="row">
+            <table class="table table-responsive table-striped table-hover" id='table2'>
+                <thead>
+                    <tr>
+                        <td><strong>Nome</strong></td>
+                        <td><strong>Numero</strong></td>
+                        <td><strong>Email</strong></td>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="row">
+            <table class="table table-responsive table-striped table-hover" id='table3'>
+                <thead>
+                    <tr>
+                        <td><strong>Nome</strong></td>
+                        <td><strong>Numero</strong></td>
+                        <td><strong>Email</strong></td>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+    <script src="js/table.js"></script>
+    <script>
+        var row ={nome:'Nome',numero:'Numero',Email:'Email'};
+        
+        var row2 ={nome:'Nome 2',numero:'Numero 2',Email:'Email 2'};
+        
+        var row3 ={nome:'Nome 3',numero:'Numero 3',Email:'Email 3'};
+        
+        var table = Table('table');
+        table.addObject(row);
+        
+        var table2 = Table('table2');
+        table2.addObject(row2);
+        
+        var table3 = Table('table3')
+        table3.addObject([row,row2,row3]);
+    </script>
+</body>
+
+</html>
