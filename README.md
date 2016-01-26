@@ -1,26 +1,33 @@
-# SingleTableObject
+# Single Table Object
 
-Simples plugin para popular sua tabela com um objeto javascript ou uma array de objetos javascript.
+> Simples plugin para construir sua tabela a partir de objetos JavaScript.
 
+## Exemplo
 
-#Exemplo de utilização
+```js
+var table = new SingleTableObject({ name: 'Nome', planet: 'Planeta' });
+var luke = { name: 'Luke', planet: 'Tatooine' };
+var obiwan = { name: 'Obi-Wan', planet: 'Stewjon' };
+var vader = { name: 'Anakin', planet: 'Tatooine' };
 
+// Para inserir objetos na tabela
+table
+  .add(luke)
+  .add(obiwan)
+  .add(vader);
 
-//Inicialização;
+// ou através de array
+table.add([luke, obiwan, vader]);
 
-var table = Table('Tabela_Id');
+// Para inserir a tabela no documento HTML
+table.appendTo('wrapper-id');
 
-ou
-
-var table = new Table('Tabela_Id');
-
-//Para adicionar um objeto
-
-table.addObject(seuObjeto);
-
-//Para adicionar varios objeto
-
-table.addObject(arrayObjeto);
-
-#Observação
-Desenvolvido em javaScript puro , ainda não testando no Internet Explore.
+// ou
+var wrapper = document.getElementById('wrapper-id');
+table.appendTo(wrapper);
+```
+| Nome    | Planeta   |
+| ------- | --------- |
+| Luke    | Tatooine  |
+| Obi-Wan | Stewjon   |
+| Anakin  | Tatooine  |
