@@ -88,12 +88,19 @@
     return filtered;
   };
 
-  SingleTableObject.prototype.add = function (obj) {
+  SingleTableObject.prototype.add = function (obj, callback) {
     if (isArray(obj)) {
         var length = obj.length;
 
         for (var i = 0; i < length; i++) {
+          
+          if(callback !== undefined){
+              
+              callback(obj[i]); 
+          }
+                               
           this.add(obj[i]);
+          
         }
         return this;
     }
@@ -117,5 +124,5 @@
     return el.appendChild(this._table);
   };
 
-  root.SingleTableObject = SingleTableObject;
+  root.SgTable = SingleTableObject;
 })(this);

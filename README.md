@@ -5,7 +5,7 @@
 ## Exemplo
 
 ```js
-var table = new SingleTableObject({ name: 'Nome', planet: 'Planeta' });
+var table = new SgTable({ name: 'Nome', planet: 'Planeta' });
 var luke = { name: 'Luke', planet: 'Tatooine' };
 var obiwan = { name: 'Obi-Wan', planet: 'Stewjon' };
 var vader = { name: 'Anakin', planet: 'Tatooine' };
@@ -19,12 +19,24 @@ table
 // ou através de array
 table.add([luke, obiwan, vader]);
 
+// para manipular seu arry antes de ser inserido passe uma funação callback;
+
+table.add([luke,obiwan,vader],callback);
+
+function callback (obj){
+    
+   // irá ser acionado a cada laço do seu array.
+}
+
+
 // Para inserir a tabela no documento HTML
 table.appendTo('wrapper-id');
 
 // ou
 var wrapper = document.getElementById('wrapper-id');
 table.appendTo(wrapper);
+
+
 ```
 | Nome    | Planeta   |
 | ------- | --------- |

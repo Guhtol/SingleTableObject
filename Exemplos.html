@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Exemplo</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+    crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Exemplo</h1>
+        <hr>
+        <div id="tablePessoa">
+        </div>
+
+        <div id="tableEscola">
+
+        </div>
+
+    </div>
+
+    <script src="SingleTableObject.js"></script>
+    <script>
+        //init plugin
+        
+		var tbPessoa = new SgTable({nome:"Nome Pessoa", tipo:"Tipo Pessoa", profissao:"Profissão" });
+        
+        var tbEscola = new SgTable({nome:"Nome Escola", rua:"Rua"});
+        
+        //config bootstrap table
+        
+        var configTable ="table table-responsive table-striped";
+        
+        tbPessoa._table.className =configTable;
+        
+        tbEscola._table.className =configTable;
+        
+        //criação de pessoas
+        
+        var pessoaFisica = {nome:"Otavio", tipo:"Pessoa Física", profissao:"Desenvolvedor" };
+        
+        var pessoaJuridica = {profissao:"Pateleiro",nome:"Zé do Pastel" ,tipo:"Pessoa Jurídica"};
+        
+        //criação de escola
+        
+        var escola = {nome:"Doutor Escola Brasil", rua:"Dos pedregulhos"};
+        
+        //inclusão em array de pessoas.
+        tbPessoa.add([pessoaFisica,pessoaJuridica],callBack);
+        
+        //inclusão de um unico objeto.
+        
+        tbEscola.add(escola);
+        
+        //appende ao wraper tableId
+        tbPessoa.appendTo("tablePessoa");
+        
+        tbEscola.appendTo("tableEscola");
+                
+        // só funciona se for passado um array 
+        function callBack(obj){
+            
+            console.log(obj);
+        }
+    </script>
+</body>
+
+</html>
