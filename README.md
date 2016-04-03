@@ -19,7 +19,7 @@ table
 // ou através de array
 table.add([luke, obiwan, vader]);
 
-// para manipular seu arry antes de ser inserido passe uma funação callback;
+// para manipular seu arry antes de ser inserido passe uma função callback;
 
 table.add([luke,obiwan,vader],callback);
 
