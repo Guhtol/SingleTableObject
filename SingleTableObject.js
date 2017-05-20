@@ -1,4 +1,5 @@
 (function (root) {
+
     'use strict';
 
     function isArray(obj) {
